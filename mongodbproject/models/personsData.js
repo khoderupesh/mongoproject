@@ -15,6 +15,6 @@ const personsSchema = new schema({
     }
 });
 
-const person = mongoose.model('personObj', personsSchema);
+const person = mongoose.model('personj', personsSchema);
 
 module.exports = person;

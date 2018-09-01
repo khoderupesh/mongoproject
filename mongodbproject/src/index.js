@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/personGet');
+mongoose.connect('mongodb://localhost/personGet2');
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());

@@ -7,19 +7,24 @@ router.get('/persons', (req, res, next) => {
 });
 
 router.post('/persons', (req, res, next) => {
-  person.create(req.body).then(function(person){
-    res.send(person);
+  person.create(req.body).then(function (personLearn){
+    res.send(personLearn);
   }).catch(next);
   // let personLearn = new person(req.body);
   // personLearn.save();
 });
 
 router.put('/persons/:id', (req, res, next) => {
-    res.send({type: 'PUT'});
+  person.findByIdAndUpdate({_id: req.params.id})
+  // res.send({type: 'PUT'});
 });
 
 router.delete('/persons/:id', (req, res, next) => {
-    res.send({type: 'DELETE'});
+  person.findByIdAndRemove({_id: req.params.id}).then(function (personLearn){
+    res.send(personLearn);
+  })
+  // console.log(req.params.id)
+  // res.send({type: 'DELETE'});
 });
 
 module.exports = router;
